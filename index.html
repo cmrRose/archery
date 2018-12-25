@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Wi5 Connect Coverage</title>
+  <title>Archery Schools</title>
   
   <!-- Load Leaflet from a CDN -->
    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
@@ -71,16 +71,8 @@
 
 
     /*~~~~~~ base stations points ~~~~~~~*/
-    //custom icon with the Wi5 logo
-    var myIcon = new L.Icon({
-      
-        iconSize: [34, 45],
-        iconAnchor: [19, 45],
-        popupAnchor: [0, -45],
-        shadowUrl: 'markers-shadow@2x.png',
-        shadowSize: [36, 16],
-        shadowAnchor: [14, 15]
-    });
+  
+    
     
     //locations in geojson format
     var schoolsdata = {
@@ -135,7 +127,7 @@
     var schoolpoints = L.geoJSON(schoolsdata, {
       pointToLayer: function (feature, latlng){
         //references the custom icon defined above
-        return L.marker(latlng, {icon: myIcon});
+        return L.marker(latlng);
       }, 
       onEachFeature: function (feature, layer){
         //set the popup content
