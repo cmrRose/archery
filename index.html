@@ -5,19 +5,16 @@
   <meta name="viewport" content="width=device-width">
   <title>Archery Schools</title>
   
+  <!-- Caroline Rose | cmrrose.github.com | Dec 2018 -->
+  
   <!-- Load Leaflet from a CDN -->
    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
   
-  <!-- A Leaflet plugin by https://github.com/perliedman. We need this for the address search -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+  <!-- Archery target image by Alberto Barbati, from Wikimedia. https://commons.wikimedia.org/wiki/File:WA_80_cm_archery_target.svg -->
   
- 
   <style>
-    
-    
-    
+
     /* Make the map fill the entire page */
     #map {
             position: fixed;
@@ -26,9 +23,7 @@
             left: 0;
             right: 0;
         }
-    
- 
-    
+     
   </style>
 </head>
 <body>
@@ -36,7 +31,8 @@
   
   <script>
     /* JAVASCRIPT */
-      /* ~~~~~~~~ Map ~~~~~~~~ */
+    
+    /* ~~~~~~~~ Map ~~~~~~~~ */
     //create a map, center it, and set the zoom level. 
     //set zoomcontrol to false because we will add it in a different corner. 
     var map = L.map('map', {zoomControl:false}).setView([45.06698,-92.810302], 6);
@@ -51,15 +47,7 @@
     //place a zoom control in the top right: 
     new L.Control.Zoom({position: 'topright'}).addTo(map);
 
-
-    /* ~~~~~~~~ Address Search ~~~~~~~~ */
-    // create the geocoding (address search) control and add it to the map
-    L.Control.geocoder({collapsed: false, position: "topleft", showResultIcons: true}).addTo(map);
-
-
-  
-    
-    // some geocoding and all distances calculated in https://www.geosheets.com/demo
+    // some geocoding and all distances calculated via https://www.geosheets.com/demo
     // locations in geojson format
     var schoolsdata = {
 "type": "FeatureCollection",
