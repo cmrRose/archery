@@ -117,7 +117,7 @@
       }, 
       onEachFeature: function (feature, layer){
         //set the popup content
-        layer.bindPopup("<b>School: </b><br>"+feature.properties.Place+"<br><br><b>Distance from SCPA: </b>"+feature.properties.Distance)
+        layer.bindPopup("<b>School: </b><br>"+feature.properties.Place+"<br><br><b>Distance from SCPA: </b>"+feature.properties.Distance+" miles")
       }  
     }).addTo(map); //add points to the map
     
