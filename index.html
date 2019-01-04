@@ -92,7 +92,7 @@
 { "type": "Feature", "properties": { "Place": "WESTONKA MIDDLE SCHOOL , MOUND, MN, UNITED STATES", "Lat": 44.939319, "Lon": -93.66912, "Distance": 42.873335 }, "geometry": { "type": "Point", "coordinates": [ -93.66912, 44.939319 ] } },
 { "type": "Feature", "properties": { "Place": "WHITE BEAR LAKE AREA HIGH SCHOOL , WHITE BEAR LAKE, MN, UNITED STATES", "Lat": 45.047897, "Lon": -93.005378, "Distance": 9.613037 }, "geometry": { "type": "Point", "coordinates": [ -93.005378, 45.047897 ] } },
 { "type": "Feature", "properties": { "Place": "WILLOW LANE ELEMENTARY , WHITE BEAR LAKE, MN, UNITED STATES", "Lat": 45.05121, "Lon": -93.026601, "Distance": 10.612755 }, "geometry": { "type": "Point", "coordinates": [ -93.026601, 45.05121 ] } },
-{ "type": "Feature", "properties": { "Place": "ZIMMERMAN MSHS , ZIMMERMAN, MN, UNITED STATES", "Lat": 45.467503, "Lon": -93.602475, "Distance": 47.431101 }, "geometry": { "type": "Point", "coordinates": [ -93.602475, 45.467503 ] } }
+{ "type": "Feature", "properties": { "Place": "ZIMMERMAN MSHS , ZIMMERMAN, MN, UNITED STATES", "Lat": 45.467503, "Lon": -93.602475, "Distance": 47.431101, "icon": "archeryIcon"}, "geometry": { "type": "Point", "coordinates": [ -93.602475, 45.467503 ] } }
 ]
 }
     
@@ -112,7 +112,7 @@
     var schoolpoints = L.geoJSON(schoolsdata, {
       pointToLayer: function (feature, latlng){
         //references the custom icon defined above
-        return L.marker(latlng, {icon: archeryIcon});
+        return L.marker(latlng, {icon: feature.properties.icon});
       }, 
       onEachFeature: function (feature, layer){
         //set the popup content
