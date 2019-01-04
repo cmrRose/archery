@@ -118,12 +118,17 @@
         shadowAnchor: [14, 15]
     });
     
+    function defineIcon(iconproperty){
+      console.log("icon", iconproperty); 
+      return bluegreyIcon;
+    }
+    
     
     //add the points to the map
     var schoolpoints = L.geoJSON(schoolsdata, {
       pointToLayer: function (feature, latlng){
         //references the custom icon defined above
-        return L.marker(latlng);
+        return L.marker(latlng, {icon: defineIcon(feature.properties.icon)});
       }, 
       onEachFeature: function (feature, layer){
         //set the popup content
