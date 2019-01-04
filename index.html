@@ -35,7 +35,7 @@
     /* ~~~~~~~~ Map ~~~~~~~~ */
     //create a map, center it, and set the zoom level. 
     //set zoomcontrol to false because we will add it in a different corner. 
-    var map = L.map('map', {zoomControl:false}).setView([45.06698,-92.810302], 6);
+    var map = L.map('map', {zoomControl:false}).setView([45.06698,-92.810302], 8);
 
     /* ~~~~~~~~ Map Layers ~~~~~~~~ */
     //basemap from Open Street Map
@@ -94,14 +94,24 @@
 { "type": "Feature", "properties": { "Place": "ZIMMERMAN MSHS , ZIMMERMAN, MN, UNITED STATES", "Lat": 45.467503, "Lon": -93.602475, "Distance": 47.431101 }, "geometry": { "type": "Point", "coordinates": [ -93.602475, 45.467503 ] } }
 ]
 }
-
+    
+     //custom icon with archery target
+    var archeryIcon = new L.Icon({
+        iconUrl: 'target-marker.png',
+        iconSize: [34, 45],
+        iconAnchor: [19, 45],
+        popupAnchor: [0, -45],
+        shadowUrl: 'markers-shadow@2x.png',
+        shadowSize: [36, 16],
+        shadowAnchor: [14, 15]
+    });
     
     
     //add the points to the map
     var schoolpoints = L.geoJSON(schoolsdata, {
       pointToLayer: function (feature, latlng){
         //references the custom icon defined above
-        return L.marker(latlng);
+        return L.marker(latlng, {icon: archeryIcon});
       }, 
       onEachFeature: function (feature, layer){
         //set the popup content
